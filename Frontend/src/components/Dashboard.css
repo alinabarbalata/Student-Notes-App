@@ -1,0 +1,240 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  height: 94vh;
+}
+
+.notes-list {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ddd;
+}
+
+.create-note-section {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-note-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-note-form textarea {
+  width: 200%;
+  height: 80vh;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-note-form button {
+  padding: 10px 20px;
+  background-color: rgb(175, 76, 127);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.create-note-form button:hover {
+  background-color: rgb(208, 114, 162);
+}
+
+.note-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.note-card p {
+  margin: 0;
+}
+
+.context-menu {
+  position: absolute;
+  background-color: rgb(175, 76, 127);
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.context-menu button {
+  background: none;
+  background-color: rgb(175, 76, 127);
+  border: none;
+  padding: 8px 16px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.context-menu button:hover {
+  background-color: rgb(208, 114, 162);
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #ccc;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar-container.open {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar-content select,
+.sidebar-content button {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f7f7f7;
+  color: black;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-content select:hover,
+.sidebar-content button:hover {
+  background-color: #e8f0fe;
+}
+
+.arrow-button {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.arrow-button:hover {
+  background-color: #f0f0f0;
+}
+
+.arrow-button span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: solid #333;
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.arrow-button.open span {
+  transform: rotate(225deg);
+}
+
+.create-note-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 200%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.save-as-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.save-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.save-buttons button {
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: rgb(175, 76, 127);
+  color: white;
+  cursor: pointer;
+  border: 1px solid rgb(175, 76, 127);
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.save-buttons button:hover {
+  background-color: rgb(208, 114, 162);
+}
+
+.save-buttons button:active {
+  transform: scale(0.98);
+}
+
+.save-as-container select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.save-as-container label {
+  font-size: 14px;
+  font-weight: bold;
+}
