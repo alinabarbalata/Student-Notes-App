@@ -1,4 +1,3 @@
-// src/components/Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
@@ -6,17 +5,14 @@ import './Login.css';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    // TODO: Implement authentication logic here
 
-    // For demonstration purposes, assume login is successful
     const isLoginSuccessful = true;
 
     if (isLoginSuccessful) {
-      // Redirect to the dashboard
       navigate('/dashboard');
     }
   };

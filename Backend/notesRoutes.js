@@ -1,8 +1,7 @@
 const express = require('express');
-const db = require('./database'); // Use the shared database instance
+const db = require('./database');
 const router = express.Router();
 
-// Get all notes
 router.get('/', (req, res) => {
   db.all('SELECT * FROM notes', [], (err, rows) => {
     if (err) {
@@ -12,7 +11,6 @@ router.get('/', (req, res) => {
   });
 });
 
-// Get a specific note by ID
 router.get('/:id', (req, res) => {
   const noteId = parseInt(req.params.id);
   db.get('SELECT * FROM notes WHERE id = ?', [noteId], (err, row) => {
@@ -26,7 +24,6 @@ router.get('/:id', (req, res) => {
   });
 });
 
-// Create a new note
 router.post('/', (req, res) => {
   const { content } = req.body;
   if (!content) {
@@ -40,7 +37,6 @@ router.post('/', (req, res) => {
   });
 });
 
-// Update a note by ID
 router.put('/:id', (req, res) => {
   const noteId = parseInt(req.params.id);
   const { content } = req.body;
@@ -60,7 +56,6 @@ router.put('/:id', (req, res) => {
   });
 });
 
-// Delete a note by ID
 router.delete('/:id', (req, res) => {
   const noteId = parseInt(req.params.id);
 

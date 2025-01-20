@@ -1,4 +1,3 @@
-// src/components/Forum.js
 import React from 'react';
 import './Forum.css';
 
@@ -10,4 +9,4 @@ const Forum = () => {
   );
 };
 
-export default Forum; // Make sure it's a default export
+export default Forum;
